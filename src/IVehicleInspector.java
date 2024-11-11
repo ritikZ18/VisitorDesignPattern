@@ -10,11 +10,18 @@
   really knowing what that behavior is - in some ways that sounds unsafe
   (and it could be!) but also quite powerful.
 */
-public interface IVehicleInspector {
+public  interface IVehicleInspector {
     /* A vehicle Inspector is supposed to visit
        all the vehicles parked in his shop and
        calculate the cost for each one of them. */
-    int visit(Car car);
-    int visit(Van van);
-    int visit(Motorbike motorbike);
+
+
+
+    float visit(Vehicle.Car car);
+    
+    float visit(Vehicle.Van van);
+    
+    float visit(Vehicle.Motorbike motorbike);
+    
+    void inspect(IVehicle vehicle);
 }

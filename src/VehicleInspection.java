@@ -1,6 +1,6 @@
 public class VehicleInspection implements IVehicleInspector {
     @Override
-    public int visit(Car car) {
+    public float visit(Vehicle.Car car) {
         int serviceCharge = 0;
         if(car.getColor()=="Black"){
             serviceCharge += 100;
@@ -12,7 +12,7 @@ public class VehicleInspection implements IVehicleInspector {
     }
 
     @Override
-    public int visit(Van van) {
+    public float visit(Vehicle.Van van) {
         int serviceCharge = 0;
         if(van.getNumberOfDoors()>4){
             serviceCharge += 500;
@@ -24,7 +24,7 @@ public class VehicleInspection implements IVehicleInspector {
     }
 
     @Override
-    public int visit(Motorbike motorbike) {
+    public float visit(Vehicle.Motorbike motorbike) {
         int serviceCharge = 0;
         if(motorbike.getEngineCapacity()>=200){
             serviceCharge += 200;
@@ -33,5 +33,11 @@ public class VehicleInspection implements IVehicleInspector {
         }
         System.out.println("Service Charge for Motorbike: " + serviceCharge);
         return serviceCharge;
+    }
+
+    @Override
+    public void inspect(IVehicle vehicle) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'inspect'");
     }
 }

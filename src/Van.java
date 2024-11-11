@@ -2,8 +2,7 @@ public class Van implements IVehicle {
     private int storageCapacity;
     private int numberOfDoors;
 
-    public Van(int storageCapacity, int numberOfDoors) {
-        this.storageCapacity = storageCapacity;
+    public Van(int numberOfDoors) {
         this.numberOfDoors = numberOfDoors;
     }
     public int getStorageCapacity() {
@@ -19,7 +18,12 @@ public class Van implements IVehicle {
         this.numberOfDoors = numberOfDoors;
     }
     @Override
-    public int accept(IVehicleInspector vehicleInspector) {
+    public float accept(IVehicleInspector vehicleInspector) {
         return vehicleInspector.visit(this);
+    }
+    @Override
+    public String getModel() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getModel'");
     }
 }
