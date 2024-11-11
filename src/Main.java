@@ -12,10 +12,11 @@ public class Main {
     public static void main(String[] args) {
 
         List<IVehicle> vehicles = new ArrayList<IVehicle>();
-        String filePath = System.getProperty("data");
-        
-        if (filePath == null) {
-            System.out.println("Please specify the JSON file path using the 'data' system property.");
+        String filePath = "data.json";
+
+        java.io.File file = new java.io.File(filePath);
+        if (!file.exists()) {
+            System.out.println("Error-> " + filePath + " doesnt exist.");
             return;
         }
 

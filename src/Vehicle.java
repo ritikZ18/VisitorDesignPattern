@@ -33,13 +33,20 @@ public class Vehicle {
             return "Car";
         }
 
+        //hashcode clutter
+        @Override
+        public String toString() {
+            return "Car : \nColor=" + color + ", \nManufacture Year=" + manufactureDate + "\n";
+        }
+
     }
 
     public static class Van implements IVehicle {
         private int storageCapacity;
         private int numberOfDoors;
 
-        public Van(int numberOfDoors, int storageCapacity) {
+        public Van(int storageCapacity, int numberOfDoors ) {
+            this.storageCapacity = storageCapacity;
             this.numberOfDoors = numberOfDoors;
         }
 
@@ -65,6 +72,12 @@ public class Vehicle {
 
         public String getModel() {
             return "Van";
+        }
+
+        //hashcode clutter
+        @Override
+        public String toString() {
+            return "Van : \nStorage Capacity=" + storageCapacity + " litre, \nNumber of Doors=" + numberOfDoors + "\n";
         }
 
     }
@@ -100,6 +113,13 @@ public class Vehicle {
 
         public String getModel() {
             return "Motorbike";
+        }
+
+
+        //hashcode clutter
+        @Override
+        public String toString() {
+            return "Motorbike : \nBrand=" + brand + ", \nEngine Capacity=" + engineCapacity + "cc\ns";
         }
 
     }

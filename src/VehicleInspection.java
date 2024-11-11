@@ -1,8 +1,10 @@
+import java.util.Objects;
+
 public class VehicleInspection implements IVehicleInspector {
     @Override
     public float visit(Vehicle.Car car) {
         int serviceCharge = 0;
-        if(car.getColor()=="Black"){
+        if(Objects.equals(car.getColor(), "Black")){
             serviceCharge += 100;
         }else{
             serviceCharge += 50;

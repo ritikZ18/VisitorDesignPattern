@@ -13,7 +13,7 @@ public class AltMain {
 
 
     List<IVehicle> vehicles = Arrays.asList(
-        new Vehicle.Car("Red",2000),
+        new Vehicle.Car("Black",2000),
         new Vehicle.Van(0,2),
         new Vehicle.Motorbike(250,"Suzuki")
     );
