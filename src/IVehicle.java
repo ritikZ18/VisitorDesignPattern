@@ -4,4 +4,5 @@ public interface IVehicle {
     // the total Service Charge.
     float accept(IVehicleInspector inspector);
     String getModel();
+    float co2Emissions();
 }

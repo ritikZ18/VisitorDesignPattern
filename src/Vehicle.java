@@ -33,6 +33,14 @@ public class Vehicle {
             return "Car";
         }
 
+        @Override
+        public float co2Emissions() {
+            //calculations return 0;
+            float emissions =  8887*(1+(0.05f * (2020-manufactureDate)));
+            System.out.println("Car CO2 Emissions: " + emissions);
+            return emissions; //check emission calculations
+        }
+
         //hashcode clutter
         @Override
         public String toString() {
@@ -72,6 +80,13 @@ public class Vehicle {
 
         public String getModel() {
             return "Van";
+        }
+
+        @Override
+        public float co2Emissions() {
+            float emissions =  8887 * (1+(0.1f*(numberOfDoors - 2)));
+            System.out.println("Van CO2 Emissions: " +emissions);
+            return emissions;
         }
 
         //hashcode clutter
@@ -115,6 +130,10 @@ public class Vehicle {
             return "Motorbike";
         }
 
+        @Override
+        public float co2Emissions() {
+            return 8887 * (1+(0.01f*(100 -engineCapacity)));
+        }
 
         //hashcode clutter
         @Override
