@@ -1,6 +1,4 @@
 import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.List;
 import java.util.ArrayList; 
 
@@ -8,7 +6,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-@SuppressWarnings("unused")
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -35,19 +34,19 @@ public class Main {
                     case "Car":
                         String color = (String) vehicleObj.get("color");
                         String myear = (String) vehicleObj.get("myear");
-                        vehicles.add(new Car(color, Integer.parseInt(myear)));
+                        vehicles.add(new Vehicle.Car(color, Integer.parseInt(myear)));
                         break;
 
                     case "Van":
                         String storage = (String) vehicleObj.get("storage");
                         String numdoors = (String) vehicleObj.get("numdoors");
-                        vehicles.add(new Van(Integer.parseInt(storage), Integer.parseInt(numdoors)));
+                        vehicles.add(new Vehicle.Van(Integer.parseInt(storage), Integer.parseInt(numdoors)));
                         break;
 
                     case "Motorbike":
                         String engine = (String) vehicleObj.get("engine");
                         String brand = (String) vehicleObj.get("brand");
-                        vehicles.add(new Motorbike(Integer.parseInt(engine), brand));
+                        vehicles.add(new Vehicle.Motorbike(Integer.parseInt(engine), brand));
                         break;
 
                     default:

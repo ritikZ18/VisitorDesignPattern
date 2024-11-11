@@ -4,6 +4,7 @@ public class AltVehicleService {
     private final IVehicleInspector inspector;
 
     public AltVehicleService(String viProp){
+       
         this.inspector = VehicleFactory.getVehicleInspector(viProp);
     }
 

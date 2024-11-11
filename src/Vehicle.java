@@ -1,71 +1,107 @@
-public class Vehicle { 
+public class Vehicle {
 
+    public static class Car implements IVehicle {
+        private String color;
+        private int manufactureDate;
 
-public static class Car implements IVehicle {
-   
-    private int manufactureDate;
+        public Car(String color, int manufactureDate) {
+            this.manufactureDate = manufactureDate;
+            this.color = color;
+        }
 
-    public Car(int manufactureDate) {
-        this.manufactureDate = manufactureDate;
+        public String getColor() {
+            return color;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        public int getManufactureDate() {
+            return manufactureDate;
+        }
+
+        public void setManufactureDate(int manufactureDate) {
+            this.manufactureDate = manufactureDate;
+        }
+
+        public float accept(IVehicleInspector inspector) {
+            return inspector.visit(this);
+        }
+
+        public String getModel() {
+            return "Car";
+        }
+
     }
 
-    @Override
-    public float accept(IVehicleInspector inspector) {
-        return inspector.visit(this);
-    }
-    // ... other methods
+    public static class Van implements IVehicle {
+        private int storageCapacity;
+        private int numberOfDoors;
 
-    public String getColor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getColor'");
-    }
+        public Van(int numberOfDoors, int storageCapacity) {
+            this.numberOfDoors = numberOfDoors;
+        }
 
-}
+        public int getStorageCapacity() {
+            return storageCapacity;
+        }
 
+        public void setStorageCapacity(int storageCapacity) {
+            this.storageCapacity = storageCapacity;
+        }
 
+        public int getNumberOfDoors() {
+            return numberOfDoors;
+        }
 
-public static class Van implements IVehicle {
+        public void setNumberOfDoors(int numberOfDoors) {
+            this.numberOfDoors = numberOfDoors;
+        }
 
-    private int numberOfDoors;
+        public float accept(IVehicleInspector inspector) {
+            return inspector.visit(this);
+        }
 
-    public Van(int numberOfDoors) {
-        this.numberOfDoors = numberOfDoors;
-    }
+        public String getModel() {
+            return "Van";
+        }
 
-    @Override
-    public float accept(IVehicleInspector inspector) {
-        return inspector.visit(this);
-    }
-    // ... other methods
-
-    public int getNumberOfDoors() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumberOfDoors'");
-    }
-}
-
-
-
-public static class Motorbike implements IVehicle {
-
-    private int engineCapacity;
-
-
-    public Motorbike(int engineCapacity){
-        this.engineCapacity = engineCapacity;
     }
 
+    public static class Motorbike implements IVehicle {
+        private int engineCapacity;
+        private String brand;
 
-    @Override
-    public float accept(IVehicleInspector inspector) {
-        return inspector.visit(this);
-    }
-    // ... other methods
+        public Motorbike(int engineCapacity, String brand) {
+            this.engineCapacity = engineCapacity;
+            this.brand = brand;
+        }
 
-    public int getEngineCapacity() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getEngineCapacity'");
+        public int getEngineCapacity() {
+            return engineCapacity;
+        }
+
+        public void setEngineCapacity(int engineCapacity) {
+            this.engineCapacity = engineCapacity;
+        }
+
+        public String getBrand() {
+            return brand;
+        }
+
+        public void setBrand(String brand) {
+            this.brand = brand;
+        }
+
+        public float accept(IVehicleInspector inspector) {
+            return inspector.visit(this);
+        }
+
+        public String getModel() {
+            return "Motorbike";
+        }
+
     }
-}
 
 }

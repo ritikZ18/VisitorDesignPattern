@@ -12,7 +12,7 @@ public class VehicleService {
     public int calculateTotal(IVehicle[] vehicles) {
         int total = 0;
         for(IVehicle vehicle : vehicles){
-            total = total + vehicle.accept(inspector);
+            total = (int) (total + vehicle.accept(inspector));
         }
         return total;
     }

@@ -1,17 +1,21 @@
 import java.util.Arrays;
 import java.util.List;
 
+
 public class AltMain {
     public static void main(String[] args) {
 
     String viProp = System.getProperty("vi");
+    if(viProp == null){
+        viProp = "altProp";
+    }
     AltVehicleService service  =   new AltVehicleService(viProp);
 
 
     List<IVehicle> vehicles = Arrays.asList(
-        new  Vehicle.Car(2000),
-        new Vehicle.Van(2),
-        new Vehicle.Motorbike(1212)
+        new Vehicle.Car("Red",2000),
+        new Vehicle.Van(0,2),
+        new Vehicle.Motorbike(250,"Suzuki")
     );
 
 
